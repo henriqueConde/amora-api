@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "perfurmers",
+  "info": {
+    "singularName": "perfurmer",
+    "pluralName": "perfurmers",
+    "displayName": "Perfurmer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product",
+      "inversedBy": "perfurmers"
+    }
+  }
+}
